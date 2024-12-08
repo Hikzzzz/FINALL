@@ -1,11 +1,16 @@
-name: CI/CD Workflow
+nname: CI/CD Workflow
 
 on:
   push:
     branches:
       - main
+      - '*'  # Запускается для всех веток
     tags:
       - 'v*'  # Запускается при добавлении тегов, начинающихся с 'v'
+  pull_request:
+    branches:
+      - main
+      - '*'  # Запускается для всех пулл-реквестов, направленных на main
 
 jobs:
   test:
