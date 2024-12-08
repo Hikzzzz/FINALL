@@ -1,4 +1,4 @@
-name: CI/CD Workflow
+nname: CI/CD Workflow
 
 on:
   push:
@@ -47,6 +47,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t myapp_container/hikzzzz:${{ github.ref }} .
+
       - name: Push Docker image
         run: |
           docker push myapp_container/hikzzzz:${{ github.ref }} 
